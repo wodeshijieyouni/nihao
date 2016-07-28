@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>结算</title>
+<link href="__PUBLIC__/css/base.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/haom/css/common.css" type="text/css" media="all" />
+<link rel="stylesheet" href="__PUBLIC__/haom/css/settlement.css" type="text/css" media="all" />
+<script type="text/javascript" src="__PUBLIC__/haom/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/haom/js/slider.js"></script>
+</head>
+
+<body bgcolor="#e0d6df">
+  <include file="header/header" />
+  <div id="container">
+    <div id="content">
+      <div class="settlement-message">
+        <h1 class="title">购买商品</h1>
+        <div class="receive-container">
+          <h2>收货人</h2>
+          <div class="address-container">
+            
+            <div class="new-address">
+          
+              <div class="input-address" style="display:;">
+                <form action="__MODULE__/car/order" method="post">
+                  <ul>
+                    <li>
+                      <dl>
+                        <dt><span class="require">*</span>收货人：</dt>
+                        <dd><input type="text" name="order_name" /></dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt><span class="require">*</span>手机号码：</dt>
+                        <dd><input type="text" name="order_tel" /></dd>
+                        
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt><span class="require"></span>邮编：</dt>
+                        <dd><input type="text" name="order_code" /></dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt><span class="require">*</span>地址：</dt>
+                        <dd><textarea name="order_detail"></textarea></dd>
+                      </dl>
+                    </li>
+                  </ul>
+                  <input type="hidden" name="order_total" value="{$total}">
+                 <input type="submit" id="tijiao" style="display:none;">
+                </form>
+              </div>
+              <script>
+			    $(".add-address").click(function(){
+				  $(".input-address").toggle();
+				});
+          $("#zhifu").click(function(){
+            // alert("aaa");
+            
+          });
+          function funnn(){
+            // alert("aaa");
+            $("#tijiao").trigger('click');
+          }
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="confirm-form">
+          <h2>确认订单信息</h2>
+          <ul class="confirm-nav">
+            <li class="name">商品</li>
+            <li class="price">单价</li>
+            <li class="count">数量</li>
+            <li class="total">小计</li>
+          </ul>
+          <volist name='info' id="vooo">
+          <ul class="confirm-content">
+            <li class="name"><a href="../product/details.html"><img src="__PUBLIC__/uploads/{$vooo.cart_img}" width="80" height="80" alt="蚕豆" /><span>{$vooo.cart_name}</span></a></li>
+            <li class="price">{$vooo.cart_price}</li>
+            <li class="count">{$vooo.cart_num}</li>
+            <li class="total">{$vooo.total}</li>
+          </ul>
+          </volist>
+          <p class="form-price">
+            <span>2件商品</span>
+            <span>总计：￥{$total}</span>
+          </p>
+          <div class="use-integral">
+            <div class="use-inner">
+            <p>
+              <span><span class="checkbox"><input type="checkbox" /></span>使用芙佳积分<span class="use-count"><input type="text" value="150" /></span>个</span>
+              <span class="discount">优惠：<span>￥1.50</span></span>
+            </p>
+            <p class="all-integral">(你有150个积分，可用积分150个)</p>
+            </div>
+          </div>
+          <p class="need-pay">
+            实付：<span>￥396.50</span>
+          </p>
+          <p class="cart-pay">
+            <a href="cart.html" class="re-cart">返回购物车</a>
+            <a href="javascript:void(0);" class="go-pay" id="zhifu" onclick="funnn()">去支付</a>
+          </p>
+        </div>
+      </div>
+      <div class="recommend">
+      <h1 class="title">掌柜推荐</h1>
+      <div class="rec-slider">
+      <ul>
+      <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span> </a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+        <li>
+          <p class="recom-img"><a href="../product/details.html"><img src="__PUBLIC__haom/img/ico-recommend01.jpg" alt="猕猴桃" width="163" height="153" /> <span></span></a> </p>
+          <p class="recom-name"><a href="../product/details.html">猕猴桃（新品上市）</a></p>
+          <p class="recom-price">￥5.60/斤</p>
+        </li>
+      </ul>
+      </div>
+      <p class="recommend-tab">
+        <span class="recommend-prev">&lt;</span>
+        <span class="recommend-next">&gt;</span>
+      </p>
+    </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer-logo">
+      芙佳
+    </div>
+    <dl class="company-info">
+      <dt>公司信息</dt>
+      <dd>TEL. 02-3446-8622</dd>
+      <dd>Fax. 02-541-7487</dd>
+      <dd>mail: www.fujia@163.com</dd>
+    </dl>
+  </div>
+  <script type="text/javascript" src="__PUBLIC__/homejs/jquery-1.7.1.min.js"></script>
+
+
+</body>
+</html>

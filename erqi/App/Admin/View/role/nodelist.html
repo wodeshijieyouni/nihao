@@ -1,0 +1,19 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/save/navTabId/listuser/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<p>当前角色:{$roles['name']}</p>
+		<input type="hidden" name="rid" value="{$roles['id']}">
+		<foreach name='list' item='vo'>
+			<input type="checkbox" name="nid[]" value="{$vo['id']}" <if condition="in_array($vo['id'],$rids)">checked</if> >{$vo['name']}
+		</foreach>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

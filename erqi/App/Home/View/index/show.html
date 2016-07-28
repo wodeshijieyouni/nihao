@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页</title>
+<link href="__PUBLIC__/css/base.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="__PUBLIC__/homejs/DD_belatedPNG.js"></script>
+<script>DD_belatedPNG.fix('*')</script>
+<![endif]-->
+<!--/*技术支持，小庄602842076     验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*https://shop116998991.taobao.com/*/
+/*https://shop116998991.taobao.com/*/
+/*https://shop116998991.taobao.com/*/-->
+</head>
+
+<body>
+	<include file="header/header" />
+        <p id="haha">
+                                                            
+                <div class="pros subpage">
+                    <h2>全部商品分类</h2>
+                    <ul class="prosul clearfix" id="proinfo" style="display:block">
+                        <volist name="list" id="data">
+                            <li>
+                                <h3>{$data.category_name}</h3>
+                                <volist name="mm[$data['id']]" id='li'>                   
+                                    <a href="__MODULE__/list/index/category_name/{$li.category_name}/pid/{$li.pid}/id/{$li.id}">{$li.category_name}</a>
+                                
+                                </volist>
+                                <div class="prosmore hide">
+                                    <volist name="mmm[$data['id']]" id='lii'>                   
+                                      <span><em><a href="__MODULE__/list/index/category_name/{$lii.category_name}/pid/{$lii.pid}/id/{$lii.id}">{$lii.category_name}</a></em></span>
+                                    
+                                    </volist>
+                                    
+                                    
+                                </div>
+                            </li>
+                        </volist>   
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!------------banner---------------->
+	<div id="banner">
+        <div class="fullSlide">
+            <div class="bd">
+                <ul>
+                    <li _src="url(__PUBLIC__/images/banner.jpg)" style="background:#000 center 0 no-repeat;"><a href="https://shop116998991.taobao.com/"></a></li>
+                    <li _src="url(__PUBLIC__/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;"><a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w5003-11903850250.1.YOZUX7&id=521221929103&scene=taobao_shop"></a></li>
+                    <li _src="url(__PUBLIC__/images/5.jpg)" style="background:#FEFF19 center 0 no-repeat;"><a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-11895250131.3.YOZUX7&id=521741523734"></a></li>
+                </ul>
+            </div>
+            <div class="hd"><ul></ul></div>
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+    </div>
+	
+    <!------------main---------------->
+	<div class="main">
+    	<!------热门推荐-------->
+    	<div class="recommend">
+        	<div class="title"><img src="__PUBLIC__/images/rt.png" /><p>促销与热销</p></div>
+        	<div class="clr20"></div>
+            <div class="left">
+            	<div class="img"><a href="#"><img src="__PUBLIC__/images/501.gif" width="619" height="309" /></a></div>
+                <volist name="chu" id="chuxiao">
+                    <div class="img img_309"><p><strong><a href="#">{$chuxiao.goods_name}</a></strong><span>{$chuxiao.promote_price}元</span></p><a href="#"><img src="__PUBLIC__/images/502.jpg" width="220" height="220"/></a></div>
+                </volist>
+            </div>
+            <div class="right">
+            	<h2><span>TOP 5</span>热销商品</h2>
+                <ul class="board-list">
+                <volist name="xiaoliang" id="xiao" key="k">
+                	<li>
+                    	<span class="item-num top3">{$k}</span>
+                        <span class="item-info">
+                        	<span class="item-title"><a href="#">{$xiao.goods_name}</a></span>
+                            <span class="item-price">{$xiao.shop_price}</span>
+                        </span>
+                        <span class="item-thumb"><a href="#"><img src="__PUBLIC__/uploads/{$xiao.goods_img}" width="70" height="70" /></a></span>
+                    </li>
+                </volist> 
+                </ul>
+            </div>
+        </div>
+        
+        <!------热门推荐-------->
+        
+        <volist name="list" id="data">
+         
+            <div class="list-title">
+            	<p><strong style="border-bottom:solid 2px #00c3d5;">{$data.category_name}</strong></p><a href="__MODULE__/list/index/pid/{$data.pid}/category_name/{$data.category_name}">More</a>
+            </div>
+       
+            <div class="list-div">
+            	<ul>
+                    <volist name="nnn[$data['category_name']]" id='sb'>
+                	<li>
+                        <a href="#"><img src="__PUBLIC__/uploads/{$sb.goods_img}" width="220" height="220" /></a>
+                        <p><a href="#">{$sb.goods_name}</a></p>
+                        <pre>适用于小米平板, 所有手机适用于小米平板, 所有手机</pre>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+        </volist>
+       
+</p>	
+     <!------底部-------->
+	<div class="footer">
+    	<div class="footer-c">
+        	<dl>
+            	<dt>购买指南</dt>
+                <dd><a href="#">第一次购物体验</a></dd>
+                <dd><a href="#">品质保证原则</a></dd>
+                <dd><a href="#">会员申请条件</a></dd>
+            </dl>
+            <dl>
+            	<dt>支付方式</dt>
+                <dd><a href="#">网银在线支付</a></dd>
+                <dd><a href="#">支付宝支付</a></dd>
+                <dd><a href="#">银联在线支付</a></dd>
+            </dl>
+            <dl>
+            	<dt>配送方式</dt>
+                <dd><a href="#">配送方式</a></dd>
+            </dl>
+            <dl>
+            	<dt>售后服务</dt>
+                <dd><a href="#">联系客服</a></dd>
+                <dd><a href="#">订单查询</a></dd>
+                <dd><a href="#">退换货流程及原则</a></dd>
+            </dl>
+            
+            <div class="col-contact">
+                <p class="phone">400-100-5678</p>
+                <p>周一至周日 8:00-18:00<br />（仅收市话费）</p>
+                <input type="button" value="在线客户" />
+            </div>
+            <div class="clr20"></div>
+            <div class="footer-b">
+                <p><a href="#">关于我们</a>  |  <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-11895250131.3.YOZUX7&id=521741523734">手机商城</a>  |  <a href="#">联系我们</a></p>
+                <p>2013 © DEHUA.com,All Rights Reserver. cz科技 版权所有　　网站备案号：闽ICP备0000号-1</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script type="text/javascript" src="__PUBLIC__/homejs/jquery-1.7.1.min.js"></script>
+
+<!--------banner特效--------------->
+<script type="text/javascript" src="__PUBLIC__/homejs/index.js"></script>
+<script type="text/javascript">
+
+
+/*------------------------------banner特效-----------------------------------*/
+	$(".fullSlide").hover(function(){
+		$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+	},
+	function(){
+		$(this).find(".prev,.next").fadeOut()
+	});
+	$(".fullSlide").slide({
+		titCell: ".hd ul",
+		mainCell: ".bd ul",
+		effect: "fold",
+		autoPlay: true,
+		autoPage: true,
+		trigger: "click",
+		startFun: function(i) {
+			var curLi = jQuery(".fullSlide .bd li").eq(i);
+			if ( !! curLi.attr("_src")) {
+				curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+			}
+		}
+});
+</script>
+</html>

@@ -1,0 +1,25 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listxing/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$list.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>原属性类别名：</dt>
+				<dd>{$list.tagname}</dd>
+			</dl>
+			<dl>
+				<dt>修改属性类别名：</dt>
+				<dd><input type="text"  style="width:100%" name="tagname" value=""/></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

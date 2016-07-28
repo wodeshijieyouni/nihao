@@ -1,0 +1,73 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listgod/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<!-- <dl>
+				<dt>商品类别：</dt>
+				<dd>
+					<select name="category_name">
+						<option value="">-请选择-</option>
+						<foreach name='list' item="vo">
+							<option value="{$vo.category_name}">{$vo.category_name}</option>
+						</foreach>
+					</select>
+				</dd>
+			</dl> -->
+			<dl>
+				
+				<dd><input type="hidden" style="width:100%" name="id" value="{$vo['id']}" /></dd>
+			</dl>
+			<dl>
+				<dt>商品名称：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="goods_name" value="{$vo['goods_name']}" /></dd>
+			</dl>
+			<dl>
+				<dt>商品描述：</dt>
+				<dd><input type="text" style="width:100%" name="goods_desc" value="{$vo['goods_desc']}" /></dd>
+			</dl>
+			<dl>
+				<dt>商品价格：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="shop_price" value="{$vo['shop_price']}"/></dd>
+			</dl>
+			<dl>
+				<dt>促销价格：</dt>
+				<dd><input type="text"  style="width:100%" name="promote_price" value="{$vo['promote_price']}"/></dd>
+			</dl>
+			<dl>
+				<dt>商品库存：</dt>
+				<dd><input type="text"  style="width:100%" name="goods_stock" value="{$vo['goods_stock']}"/></dd>
+			</dl>
+			<dl>
+				<dt>是否促销：</dt>
+				<dd>
+					<select name="is_promote">
+						<option {$vo['is_promote'] == 1 ? 'selected' : ''} value="1">-促销-</option>
+						<option {$vo['is_promote'] == 0 ? 'selected' : ''} value="0">-不促销-</option>
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>是否上下架：</dt>
+				<dd>
+					<select name="is_onsale">
+					
+						<option  {$vo['is_onsale'] == 0 ? 'selected' : ''} value="0">-上架-</option>
+						<option  {$vo['is_onsale'] == 1 ? 'selected' : ''} value="1">-下架-</option>
+					</select>
+				</dd>
+			</dl>
+			
+			
+			<!-- <input type="hidden" name="goods_add_time" value="1"> -->
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

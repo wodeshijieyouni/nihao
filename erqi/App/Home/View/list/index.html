@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品列表</title>
+<link href="__PUBLIC__/css/base.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/pro-list.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="__PUBLIC__/homejs/DD_belatedPNG.js"></script>
+<script>DD_belatedPNG.fix('*')</script>
+<![endif]-->
+<!--/*技术支持，小庄602842076     验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*技术支持，小庄602842076    验证：商城技术支持*/
+/*https://shop116998991.taobao.com/*/
+/*https://shop116998991.taobao.com/*/
+/*https://shop116998991.taobao.com/*/-->
+</head>
+
+<body>
+	<include file="header/header" />
+                                                            
+                <div class="pros subpage">
+                    <h2>全部商品分类</h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------main---------------->
+	<div class="main">
+    	<div class="current-position"><h2><a href="__MODULE__/index/showw">首页</a> > <a href="#">{$category_name}</a></h2></div>
+        <div class="big-class"><h1>{$category_name}</h1></div>
+        <div class="small-class">
+        <if condition="$in eq 1">
+        	<p>分类： 
+                <volist name="type" id="dat">
+                    <a href="__MODULE__/list/index/category_name/{$dat.category_name}/pid/{$dat.pid}/id/{$dat.id}">{$dat.category_name}</a>|
+                </volist>
+
+            </p>
+        </if>
+        <if condition="$in eq 0">
+            <p>分类：  
+                <volist name="tag" id="vo" key="k">
+                
+                <if condition="$vo['pareid'] eq 0"><if condition="$k neq 1"><br></if>{$vo['tagname']}:<else />
+                    <a href="__SELF__/hahaha/{$vo.id}">{$vo['tagname']}</a>
+                    </if>
+                
+            </volist>
+
+            </p>
+        </if>
+        </div>
+        <div class="box-hd">
+            <div class="filter-lists">
+                <ul>
+                    <li class="current"><a href="#" rel="nofollow">推荐</a>|</li>
+                    <li ><a href="#" rel="nofollow">最新</a>|</li>
+                    <li ><a href="#" rel="nofollow">价格从高到低</a>|</li>
+                    <li ><a href="#" rel="nofollow">价格从低到高</a>|</li>
+                    <li ><a href="#" rel="nofollow">关注度</a></li>
+                </ul>
+            </div>
+            
+            <div class="more">
+                <a href="javascript:;"><i class="icon-check"></i><p>仅显示特惠商品</p></a>
+                <a href="javascript:;"><i class="icon-check"></i><p>仅显示有货商品</p></a>
+            </div>
+        </div>
+        
+        <div class="products-list" id="products-list">
+        	<ul>
+                <volist name="data" id="voo">
+                	<li>
+                    	<div class="img" style="background:url(__PUBLIC__/uploads/{$voo.goods_img}) no-repeat center center"><a href="products-detailed.html"></a></div>
+                        <div class="w">
+                        	<div class="left"><p><a href="__MODULE__/Detail/index/goods_id/{$voo.id}">{$voo.goods_name} {$voo.goods_desc}</a></p><span>{$voo.shop_price}</span></div>
+                            <div class="right"><i class="star5"></i><p>22264人评价</p></div>
+                        </div>
+                        <div class="btn">
+                        	<a href="products-detailed.html" class="btn1">立即购买</a>
+                            <a href="products-detailed.html" class="btn2">加入购物车</a>
+                        </div>
+                    </li>
+                </volist> 
+            </ul>
+            <div class="clr10"></div>
+            <div class="fy">
+            	<div class="fy-c">
+                	<a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="#">94</a>
+                    <a href="#">></a>
+                    <span>共94页</span>
+                    <span>到第</span>
+                    <input type="text" value="1" />
+                    <span>页</span>
+                    <a href="#">确定</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+	
+     <!------底部-------->
+	<div class="footer">
+    	<div class="footer-c">
+        	<dl>
+            	<dt>购买指南</dt>
+                <dd><a href="#">第一次购物体验</a></dd>
+                <dd><a href="#">品质保证原则</a></dd>
+                <dd><a href="#">会员申请条件</a></dd>
+            </dl>
+            <dl>
+            	<dt>支付方式</dt>
+                <dd><a href="#">网银在线支付</a></dd>
+                <dd><a href="#">支付宝支付</a></dd>
+                <dd><a href="#">银联在线支付</a></dd>
+            </dl>
+            <dl>
+            	<dt>配送方式</dt>
+                <dd><a href="#">配送方式</a></dd>
+            </dl>
+            <dl>
+            	<dt>售后服务</dt>
+                <dd><a href="#">联系客服</a></dd>
+                <dd><a href="#">订单查询</a></dd>
+                <dd><a href="#">退换货流程及原则</a></dd>
+            </dl>
+            
+            <div class="col-contact">
+                <p class="phone">400-100-5678</p>
+                <p>周一至周日 8:00-18:00<br />（仅收市话费）</p>
+                <input type="button" value="在线客户" />
+            </div>
+            <div class="clr20"></div>
+            <div class="footer-b">
+                <p><a href="#">关于我们</a>  |  <a href="#">手机商城</a>  |  <a href="#">联系我们</a></p>
+                <p>2013 © DEHUA.com,All Rights Reserver. cz科技 版权所有　　网站备案号：闽ICP备0000号-1</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script type="text/javascript" src="__PUBLIC__/homejs/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/homejs/Public.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+	/*------------------------------排列互选框-----------------------------------*/	
+	$(".box-hd .more a").click(function(){
+		if($(this).find("i").attr("class")=="icon-check"){
+			$(this).find("i").attr("class","icon-check-active");
+		}
+		else{
+			$(this).find("i").attr("class","icon-check");
+		}
+	})
+	
+	$("#products-list").find("li").hover(function(){
+		$(this).addClass("active");
+	},function(){
+		$(this).removeClass("active");
+	})
+})
+
+</script>
+</html>
